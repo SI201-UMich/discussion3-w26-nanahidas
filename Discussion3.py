@@ -6,7 +6,7 @@ class Rectangle():
     # YOUR CODE HERE
     def __init__(self, width, height):
         self.width = width
-        self.height 
+        self.height = height
 
 
 
@@ -14,16 +14,36 @@ class Rectangle():
 
     # YOUR CODE HERE
 
+    def __str__(self):
+        return "A rectangle with width " + str(self.width) + " and height " + str(self.height)
+
 
 
     # Create the "area_calculator" method
 
     # YOUR CODE HERE
+    def are_calculator(self):
+        return float(self.width * self.height)
+    
 
 
 
     # Create the "__eq__" method
-    # 
+
+    def __eq__(self, other):
+        return self.width == other.width and self.height == other.height
+    
+def main():
+    r1 = Rectangle(10,10)
+    print(r1)
+    print("Area:", r1.area_calculator())
+    r2 = Rectangle(10,15)
+    print(r2)
+    print("Area:", r2.area_calculator())
+    print(r1 == r2)
+    print()
+if __name__ == "__main__":
+    main()
     # Returns a boolean value
 
     # YOUR CODE HERE
